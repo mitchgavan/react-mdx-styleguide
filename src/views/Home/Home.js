@@ -1,11 +1,15 @@
 import React from 'react';
-import { Box, Heading } from 'theme-ui';
 
 const Home = () => {
   return (
-    <Box sx={{ padding: 4 }}>
-      <Heading>Hello Home!</Heading>
-    </Box>
+    <div
+      css={(theme) => ({
+        color: theme.space[4],
+        fontFamily: theme.fonts.body,
+      })}
+    >
+      <h1>Hello Home!</h1>
+    </div>
   );
 };
 

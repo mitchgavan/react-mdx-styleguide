@@ -1,5 +1,5 @@
 import React from 'react';
-import { ThemeProvider } from 'theme-ui';
+import { ThemeProvider } from 'emotion-theming';
 import theme from './theme';
 import Home from './views/Home/Home';
 
