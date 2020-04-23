@@ -27,6 +27,10 @@ module.exports = {
           loader: 'babel-loader',
         },
       },
+      {
+        test: /\.mdx?$/,
+        use: ['babel-loader', '@mdx-js/loader'],
+      },
     ],
   },
 };
