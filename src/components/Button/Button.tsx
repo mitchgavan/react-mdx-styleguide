@@ -1,6 +1,15 @@
-import React from 'react';
+/** @jsx jsx */
+import { jsx } from '@emotion/core';
 
-const Button = ({ children, variant, ...props }) => {
+interface ButtonProps {
+  variant?: 'secondary' | 'primary';
+}
+
+const Button: React.FC<ButtonProps> = ({
+  children,
+  variant = 'primary',
+  ...props
+}) => {
   return (
     <button
       css={(theme) => ({
