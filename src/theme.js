@@ -1,4 +1,3 @@
-// example base theme from @theme-ui/presets
 export const theme = {
   breakpoints: ['40em', '52em', '64em'],
   space: {
@@ -50,73 +49,18 @@ export const theme = {
     heading: 1.125,
   },
   colors: {
-    text: '#000',
+    text: '#2e294e',
     background: '#fff',
-    primary: '#07c',
-    secondary: '#30c',
+    primary: '#8661c1',
+    secondary: '#38b7ed',
     muted: '#f6f6f6',
   },
-  text: {
-    heading: {
-      fontFamily: 'heading',
-      lineHeight: 'heading',
-      fontWeight: 'heading',
-    },
-  },
-  styles: {
-    root: {
-      fontFamily: 'body',
-      lineHeight: 'body',
-      fontWeight: 'body',
-    },
-    h1: {
-      variant: 'text.heading',
-      fontSize: 5,
-    },
-    h2: {
-      variant: 'text.heading',
-      fontSize: 4,
-    },
-    h3: {
-      variant: 'text.heading',
-      fontSize: 3,
-    },
-    h4: {
-      variant: 'text.heading',
-      fontSize: 2,
-    },
-    h5: {
-      variant: 'text.heading',
-      fontSize: 1,
-    },
-    h6: {
-      variant: 'text.heading',
-      fontSize: 0,
-    },
-    pre: {
-      fontFamily: 'monospace',
-      overflowX: 'auto',
-      code: {
-        color: 'inherit',
-      },
-    },
-    code: {
-      fontFamily: 'monospace',
-      fontSize: 'inherit',
-    },
-    table: {
-      width: '100%',
-      borderCollapse: 'separate',
-      borderSpacing: 0,
-    },
-    th: {
-      textAlign: 'left',
-      borderBottomStyle: 'solid',
-    },
-    td: {
-      textAlign: 'left',
-      borderBottomStyle: 'solid',
-    },
+  radii: {
+    none: '0',
+    sm: '0.125rem',
+    md: '0.25rem',
+    lg: '0.5rem',
+    full: '9999px',
   },
 };
 
