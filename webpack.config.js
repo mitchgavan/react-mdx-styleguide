@@ -5,7 +5,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 module.exports = {
   entry: {
     app: './src/index.js',
-    styleguide: './src/styleguide.js',
+    styleguide: './src/styleguide/index.js',
   },
   devtool: 'inline-source-map',
   devServer: {
@@ -20,7 +20,7 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       filename: 'styleguide/index.html',
-      template: './src/styleguide.html',
+      template: './src/styleguide/index.html',
       inject: false,
     }),
   ],
