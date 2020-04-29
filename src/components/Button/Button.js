@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Button = ({ children, variant, ...props }) => {
+const Button = ({ children, variant, as: Comp = 'button', ...props }) => {
   return (
-    <button
+    <Comp
       css={(theme) => ({
         background: theme.colors.primary,
         appearance: 'none',
@@ -20,7 +20,7 @@ const Button = ({ children, variant, ...props }) => {
       {...props}
     >
       {children}
-    </button>
+    </Comp>
   );
 };
 
