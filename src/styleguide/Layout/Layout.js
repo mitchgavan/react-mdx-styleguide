@@ -1,4 +1,5 @@
 import React from 'react';
+import Text from '../../components/Text/Text';
 
 const Layout = ({ children }) => {
   return (
@@ -7,12 +8,17 @@ const Layout = ({ children }) => {
         flexDirection: 'column',
         minHeight: '100vh',
         display: 'flex',
-        fontFamily: theme.fonts.body,
-        padding: theme.space[2],
       })}
     >
-      <div>
-        <h1>My Styleguide</h1>
+      <div
+        css={(theme) => ({
+          borderBottom: `1px solid #ddd`,
+          padding: `${theme.space[3]} ${theme.space[4]}`,
+        })}
+      >
+        <Text as="h1" css={(theme) => ({ fontSize: theme.fontSizes.xl })}>
+          My Styleguide
+        </Text>
       </div>
       <div
         css={{
@@ -33,18 +39,29 @@ const Layout = ({ children }) => {
           {children}
         </div>
         <div
-          css={{
+          css={(theme) => ({
             flexBasis: 'auto',
             '@media screen and (min-width: 40em)': {
-              flexBasis: 64,
+              flexBasis: 240,
             },
             order: -1,
-          }}
+            borderRight: `1px solid #ddd`,
+            padding: `${theme.space[3]} ${theme.space[4]}`,
+          })}
         >
-          Nav
+          <Text>Components</Text>
         </div>
       </div>
-      <div>Footer</div>
+      <div
+        css={(theme) => ({
+          borderTop: `1px solid #ddd`,
+          padding: `${theme.space[3]} ${theme.space[4]}`,
+          textAlign: 'center',
+          fontSize: theme.fontSizes.sm,
+        })}
+      >
+        &copy; 2020 My Company Name
+      </div>
     </div>
   );
 };
