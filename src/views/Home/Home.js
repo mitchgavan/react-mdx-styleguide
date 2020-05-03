@@ -6,8 +6,7 @@ const Home = () => {
   return (
     <div
       css={(theme) => ({
-        color: theme.space[4],
-        fontFamily: theme.fonts.body,
+        padding: theme.space[4],
         textAlign: 'center',
         maxWidth: '500px',
         margin: '0 auto',
