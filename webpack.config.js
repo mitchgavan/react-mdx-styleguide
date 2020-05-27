@@ -5,32 +5,27 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 module.exports = {
   entry: {
     app: './src/index.tsx',
-    styleguide: './src/styleguide/index.tsx',
   },
   devtool: 'source-map',
   devServer: {
-    contentBase: './dist',
+    historyApiFallback: true,
   },
   resolve: {
     // Add '.ts' and '.tsx' as resolvable extensions.
     extensions: ['.ts', '.tsx', '.mdx', '.js', '.json'],
   },
   plugins: [
-    new CleanWebpackPlugin(),
+    new CleanWebpackPlugin({ verbose: false }),
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: './src/index.html',
-      inject: false,
-    }),
-    new HtmlWebpackPlugin({
-      filename: 'styleguide/index.html',
-      template: './src/styleguide/index.html',
       inject: false,
     }),
   ],
   output: {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
+    publicPath: '/',
   },
   module: {
     rules: [

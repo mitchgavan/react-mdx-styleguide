@@ -2,14 +2,14 @@
 import { jsx } from '@emotion/core';
 
 interface ButtonProps {
+  children: React.ReactNode;
   variant?: 'secondary' | 'primary';
+  color?: 'blue' | 'green' | 'red' | 'gray';
 }
 
-const Button: React.FC<ButtonProps> = ({
-  children,
-  variant = 'primary',
-  ...props
-}) => {
+const Button: React.FC<
+  ButtonProps & React.ButtonHTMLAttributes<HTMLButtonElement>
+> = ({ children, color = 'blue', variant = 'primary', ...props }) => {
   return (
     <button
       css={(theme) => ({

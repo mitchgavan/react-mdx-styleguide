@@ -1,13 +1,13 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
+import { Link } from 'react-router-dom';
 import Button from '../../components/Button/Button';
 
 const Home = () => {
   return (
     <div
       css={(theme) => ({
-        color: theme.space[4],
-        fontFamily: theme.fonts.body,
+        padding: theme.space[4],
         textAlign: 'center',
         maxWidth: '500px',
         margin: '0 auto',
@@ -18,7 +18,7 @@ const Home = () => {
         This is a sample app that includes a couple of components that will be
         included in the accompanying style guide.
       </p>
-      <Button>Button</Button>
+      <Button onClick={() => console.log('fuck')}>View Style Guide</Button>
     </div>
   );
 };
