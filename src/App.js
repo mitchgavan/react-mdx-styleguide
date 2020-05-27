@@ -1,5 +1,6 @@
 import React, { lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { ErrorBoundary } from 'react-error-boundary';
 import { ThemeProvider } from 'emotion-theming';
 import { Global, css } from '@emotion/core';
 import emotionNormalize from 'emotion-normalize';
@@ -23,12 +24,14 @@ const App = () => {
         `}
       />
       <Router>
-        <Suspense fallback="Loading...">
-          <Switch>
-            <Route path="/" exact component={Home} />
-            <Route path="/styleguide" component={StyleGuide} />
-          </Switch>
-        </Suspense>
+        <ErrorBoundary>
+          <Suspense fallback="Loading...">
+            <Switch>
+              <Route path="/" exact component={Home} />
+              <Route path="/styleguide" component={StyleGuide} />
+            </Switch>
+          </Suspense>
+        </ErrorBoundary>
       </Router>
     </ThemeProvider>
   );
