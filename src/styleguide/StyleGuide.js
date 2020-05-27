@@ -6,8 +6,9 @@ import emotionNormalize from 'emotion-normalize';
 import theme from '../theme';
 import Layout from './Layout/Layout';
 import components from './components';
+import Button from '../components/Button/Button';
 
-const App = () => {
+const StyleGuide = () => {
   return (
     <ThemeProvider theme={theme}>
       <Global
@@ -32,6 +33,7 @@ const App = () => {
                 component={require(`../components/${component.path}`).default}
               />
             ))}
+            <Route path="/styleguide/button" component={Button} />
           </Switch>
         </Layout>
       </Router>
@@ -39,4 +41,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default StyleGuide;

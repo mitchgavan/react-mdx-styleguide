@@ -5,23 +5,16 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 module.exports = {
   entry: {
     app: './src/index.js',
-    styleguide: './src/styleguide/index.js',
   },
   devtool: 'inline-source-map',
   devServer: {
-    contentBase: './dist',
     historyApiFallback: true,
   },
   plugins: [
-    new CleanWebpackPlugin(),
+    new CleanWebpackPlugin({ verbose: false }),
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: './src/index.html',
-      inject: false,
-    }),
-    new HtmlWebpackPlugin({
-      filename: 'styleguide/index.html',
-      template: './src/styleguide/index.html',
       inject: false,
     }),
   ],
