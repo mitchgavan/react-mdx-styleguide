@@ -10,34 +10,20 @@ import Button from '../components/Button/Button';
 
 const StyleGuide = () => {
   return (
-    <ThemeProvider theme={theme}>
-      <Global
-        styles={css`
-          ${emotionNormalize}
-          html,
-          body {
-            padding: 0;
-            margin: 0;
-            font-family: ${theme.fonts.body};
-          }
-        `}
-      />
-
-      <Router>
-        <Layout components={components}>
-          <Switch>
-            {components.map((component) => (
-              <Route
-                key={component.name}
-                path={`/styleguide/components/${component.name.toLowerCase()}`}
-                component={require(`../components/${component.path}`).default}
-              />
-            ))}
-            <Route path="/styleguide/button" component={Button} />
-          </Switch>
-        </Layout>
-      </Router>
-    </ThemeProvider>
+    <Router>
+      <Layout components={components}>
+        <Switch>
+          {components.map((component) => (
+            <Route
+              key={component.name}
+              path={`/styleguide/components/${component.name.toLowerCase()}`}
+              component={require(`../components/${component.path}`).default}
+            />
+          ))}
+          <Route path="/styleguide/button" component={Button} />
+        </Switch>
+      </Layout>
+    </Router>
   );
 };
 
