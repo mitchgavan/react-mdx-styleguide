@@ -1,7 +1,9 @@
 import React from 'react';
 import Text from '../../components/Text/Text';
+import theme from '../../theme';
+import { Link } from 'react-router-dom';
 
-const Layout = ({ children }) => {
+const Layout = ({ children, components }) => {
   return (
     <div
       css={(theme) => ({
@@ -31,10 +33,11 @@ const Layout = ({ children }) => {
         }}
       >
         <div
-          css={{
+          css={(theme) => ({
             flex: 1,
             minWidth: 0,
-          }}
+            padding: theme.space[4],
+          })}
         >
           {children}
         </div>
@@ -50,6 +53,14 @@ const Layout = ({ children }) => {
           })}
         >
           <Text>Components</Text>
+          {components.map(({ name }) => (
+            <Link
+              key={name}
+              to={`/styleguide/components/${name.toLowerCase()}`}
+            >
+              {name}
+            </Link>
+          ))}
         </div>
       </div>
       <div

@@ -5,7 +5,7 @@ import { ThemeProvider } from 'emotion-theming';
 import emotionNormalize from 'emotion-normalize';
 import theme from '../theme';
 import Layout from './Layout/Layout';
-import Button from '../components/Button/Button.mdx';
+import components from './components';
 
 const App = () => {
   return (
@@ -21,13 +21,20 @@ const App = () => {
           }
         `}
       />
-      <Layout>
-        <Router>
+
+      <Router>
+        <Layout components={components}>
           <Switch>
-            <Route path="/" component={Button} />
+            {components.map((component) => (
+              <Route
+                key={component.name}
+                path={`/styleguide/components/${component.name.toLowerCase()}`}
+                component={require(`../components/${component.path}`).default}
+              />
+            ))}
           </Switch>
-        </Router>
-      </Layout>
+        </Layout>
+      </Router>
     </ThemeProvider>
   );
 };
