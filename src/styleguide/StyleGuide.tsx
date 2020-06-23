@@ -4,7 +4,7 @@ import { MDXProvider } from '@mdx-js/react';
 import Layout from './Layout/Layout';
 import components from './components';
 import mdxComponents from './mdxComponents';
-import Button from '../components/Button/Button';
+import ThemePage from './theme.mdx';
 
 const StyleGuide = () => {
   return (
@@ -21,7 +21,7 @@ const StyleGuide = () => {
                 }
               />
             ))}
-            <Route path="/styleguide/button" component={Button} />
+            <Route path="/" component={ThemePage} />
           </Switch>
         </MDXProvider>
       </Layout>

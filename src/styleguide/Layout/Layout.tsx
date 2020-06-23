@@ -1,25 +1,25 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
-import Text from '../../components/Text/Text';
-import components from '../components';
 import { Link } from 'react-router-dom';
+import { Theme } from '../../theme';
+import components from '../components';
 
 const Layout: React.FC = ({ children }) => {
   return (
     <div
-      css={(theme) => ({
+      css={(theme: Theme) => ({
         flexDirection: 'column',
         minHeight: '100vh',
         display: 'flex',
       })}
     >
       <div
-        css={(theme) => ({
+        css={(theme: Theme) => ({
           borderBottom: `1px solid #ddd`,
           padding: `${theme.space[3]} ${theme.space[4]}`,
         })}
       >
-        <h1 css={(theme) => ({ fontSize: theme.fontSizes.xl })}>
+        <h1 css={(theme: Theme) => ({ fontSize: theme.fontSizes.xl })}>
           My Styleguide
         </h1>
       </div>
@@ -34,7 +34,7 @@ const Layout: React.FC = ({ children }) => {
         }}
       >
         <div
-          css={(theme) => ({
+          css={(theme: Theme) => ({
             flex: 1,
             minWidth: 0,
             padding: theme.space[4],
@@ -43,7 +43,7 @@ const Layout: React.FC = ({ children }) => {
           <div css={{ maxWidth: 800, margin: '0 auto' }}>{children}</div>
         </div>
         <div
-          css={(theme) => ({
+          css={(theme: Theme) => ({
             flexBasis: 'auto',
             '@media screen and (min-width: 40em)': {
               flexBasis: 240,
@@ -53,9 +53,23 @@ const Layout: React.FC = ({ children }) => {
             padding: `${theme.space[3]} ${theme.space[4]}`,
           })}
         >
-          <div
+          <Link
+            key={name}
+            to={`/styleguide/theme`}
             css={(theme) => ({
+              display: 'block',
               fontWeight: 'bold',
+              marginBottom: theme.space[4],
+              color: 'inherit',
+              textDecoration: 'none',
+              ':hover': { color: theme.colors.primary },
+            })}
+          >
+            Theme
+          </Link>
+          <div
+            css={(theme: Theme) => ({
+              fontSize: theme.fontSizes.xl,
               marginBottom: theme.space[2],
             })}
           >
@@ -69,6 +83,7 @@ const Layout: React.FC = ({ children }) => {
                 display: 'block',
                 marginBottom: theme.space[2],
                 color: 'inherit',
+                fontWeight: 'bold',
                 textDecoration: 'none',
                 ':hover': { color: theme.colors.primary },
               })}
