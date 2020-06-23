@@ -1,4 +1,5 @@
-import React from 'react';
+/** @jsx jsx */
+import { jsx } from '@emotion/core';
 import Text from '../../components/Text/Text';
 import components from '../components';
 import { Link } from 'react-router-dom';
@@ -39,7 +40,7 @@ const Layout: React.FC = ({ children }) => {
             padding: theme.space[4],
           })}
         >
-          {children}
+          <div css={{ maxWidth: 800, margin: '0 auto' }}>{children}</div>
         </div>
         <div
           css={(theme) => ({
@@ -52,11 +53,25 @@ const Layout: React.FC = ({ children }) => {
             padding: `${theme.space[3]} ${theme.space[4]}`,
           })}
         >
-          <Text>Components</Text>
+          <div
+            css={(theme) => ({
+              fontWeight: 'bold',
+              marginBottom: theme.space[2],
+            })}
+          >
+            Components
+          </div>
           {components.map(({ name }) => (
             <Link
               key={name}
               to={`/styleguide/components/${name.toLowerCase()}`}
+              css={(theme) => ({
+                display: 'block',
+                marginBottom: theme.space[2],
+                color: 'inherit',
+                textDecoration: 'none',
+                ':hover': { color: theme.colors.primary },
+              })}
             >
               {name}
             </Link>
