@@ -1,23 +1,29 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { MDXProvider } from '@mdx-js/react';
 import Layout from './Layout/Layout';
 import components from './components';
+import mdxComponents from './mdxComponents';
 import Button from '../components/Button/Button';
 
 const StyleGuide = () => {
   return (
     <Router>
       <Layout>
-        <Switch>
-          {components.map((component) => (
-            <Route
-              key={component.name}
-              path={`/styleguide/components/${component.name.toLowerCase()}`}
-              component={require(`../components/${component.path}`).default}
-            />
-          ))}
-          <Route path="/styleguide/button" component={Button} />
-        </Switch>
+        <MDXProvider components={mdxComponents}>
+          <Switch>
+            {components.map((component) => (
+              <Route
+                key={component.name}
+                path={`/styleguide/components/${component.name.toLowerCase()}`}
+                component={
+                  require(`../components/${component.path}.mdx`).default
+                }
+              />
+            ))}
+            <Route path="/styleguide/button" component={Button} />
+          </Switch>
+        </MDXProvider>
       </Layout>
     </Router>
   );

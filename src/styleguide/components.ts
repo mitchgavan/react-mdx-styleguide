@@ -3,8 +3,8 @@
 */
 
 const components = [
-  { name: 'Button', path: 'Button/Button.mdx' },
-  { name: 'Text', path: 'Text/Text.mdx' },
+  { name: 'Button', path: 'Button/Button' },
+  { name: 'Text', path: 'Text/Text' },
 ];
 
 export default components;
