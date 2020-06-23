@@ -9,6 +9,17 @@ import theme from './theme';
 const Home = lazy(() => import('./views/Home/Home'));
 const StyleGuide = lazy(() => import('./styleguide/StyleGuide'));
 
+function ErrorFallback({ error, componentStack, resetErrorBoundary }) {
+  return (
+    <div role="alert">
+      <p>Something went wrong:</p>
+      <pre>{error.message}</pre>
+      <pre>{componentStack}</pre>
+      <button onClick={resetErrorBoundary}>Try again</button>
+    </div>
+  );
+}
+
 const App = () => {
   return (
     <ThemeProvider theme={theme}>
@@ -24,7 +35,7 @@ const App = () => {
         `}
       />
       <Router>
-        <ErrorBoundary>
+        <ErrorBoundary FallbackComponent={ErrorFallback}>
           <Suspense fallback="Loading...">
             <Switch>
               <Route path="/" exact component={Home} />

@@ -1,8 +1,17 @@
-import React from 'react';
+/** @jsx jsx */
+import { jsx } from '@emotion/core';
 
-const Button = ({ children, variant, as: Comp = 'button', ...props }) => {
+interface ButtonProps {
+  children: React.ReactNode;
+  variant?: 'secondary' | 'primary';
+  color?: 'blue' | 'green' | 'red' | 'gray';
+}
+
+const Button: React.FC<
+  ButtonProps & React.ButtonHTMLAttributes<HTMLButtonElement>
+> = ({ children, color = 'blue', variant = 'primary', ...props }) => {
   return (
-    <Comp
+    <button
       css={(theme) => ({
         background: theme.colors.primary,
         appearance: 'none',
@@ -20,7 +29,7 @@ const Button = ({ children, variant, as: Comp = 'button', ...props }) => {
       {...props}
     >
       {children}
-    </Comp>
+    </button>
   );
 };
 

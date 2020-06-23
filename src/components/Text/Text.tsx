@@ -1,15 +1,15 @@
 import React from 'react';
 
-const Text = ({ children, as: Comp = 'div', ...props }) => {
+const Text: React.FC = ({ children, ...props }) => {
   return (
-    <Comp
+    <div
       css={(theme) => ({
         margin: 0,
       })}
       {...props}
     >
       {children}
-    </Comp>
+    </div>
   );
 };
 
