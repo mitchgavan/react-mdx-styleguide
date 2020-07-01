@@ -1,6 +1,6 @@
 import React from 'react';
 // import { Table, td, th } from '../mdxComponents';
-import components from '../../components';
+import components from '../../config/components';
 
 interface Props {
   name: string;
