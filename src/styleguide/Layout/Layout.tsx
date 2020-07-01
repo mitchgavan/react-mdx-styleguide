@@ -101,7 +101,7 @@ const Layout: React.FC = ({ children }) => {
           fontSize: theme.fontSizes.sm,
         })}
       >
-        &copy; 2020 My Company Name
+        &copy; {new Date().getFullYear()} My Company Name
       </div>
     </div>
   );
