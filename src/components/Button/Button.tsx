@@ -7,9 +7,12 @@ interface ButtonProps {
   color?: 'blue' | 'green' | 'red' | 'gray';
 }
 
-const Button: React.FC<
-  ButtonProps & React.ButtonHTMLAttributes<HTMLButtonElement>
-> = ({ children, color = 'blue', variant = 'primary', ...props }) => {
+const Button = ({
+  children,
+  color = 'blue',
+  variant = 'primary',
+  ...props
+}: ButtonProps & React.ButtonHTMLAttributes<HTMLButtonElement>) => {
   return (
     <button
       css={(theme) => ({

@@ -1,6 +1,7 @@
 import React from 'react';
 import CodeBlock from './components/CodeBlock';
-import components from './components';
+import components from './config/components';
+import Props from './components/Props/Props';
 
 const styleGuideComponents = {};
 
@@ -9,6 +10,8 @@ components.forEach(({ name, path }) => {
 });
 
 const mdxComponents = {
+  ...styleGuideComponents,
+  Props,
   pre: (props) => <div {...props} />,
   code: (props) => <CodeBlock scope={styleGuideComponents} {...props} />,
 };

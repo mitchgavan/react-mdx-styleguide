@@ -2,7 +2,7 @@
 import { jsx } from '@emotion/core';
 import { Link } from 'react-router-dom';
 import { Theme } from '../../theme';
-import components from '../components';
+import components from '../config/components';
 
 const Layout: React.FC = ({ children }) => {
   return (
@@ -56,12 +56,11 @@ const Layout: React.FC = ({ children }) => {
           <Link
             key={name}
             to={`/styleguide/theme`}
-            css={(theme) => ({
+            css={(theme: Theme) => ({
               display: 'block',
-              fontWeight: 'bold',
               marginBottom: theme.space[4],
-              color: 'inherit',
               textDecoration: 'none',
+              color: 'inherit',
               ':hover': { color: theme.colors.primary },
             })}
           >
@@ -69,7 +68,8 @@ const Layout: React.FC = ({ children }) => {
           </Link>
           <div
             css={(theme: Theme) => ({
-              fontSize: theme.fontSizes.xl,
+              textTransform: 'uppercase',
+              fontWeight: 'bold',
               marginBottom: theme.space[2],
             })}
           >
@@ -83,7 +83,6 @@ const Layout: React.FC = ({ children }) => {
                 display: 'block',
                 marginBottom: theme.space[2],
                 color: 'inherit',
-                fontWeight: 'bold',
                 textDecoration: 'none',
                 ':hover': { color: theme.colors.primary },
               })}
@@ -101,7 +100,7 @@ const Layout: React.FC = ({ children }) => {
           fontSize: theme.fontSizes.sm,
         })}
       >
-        &copy; 2020 My Company Name
+        &copy; {new Date().getFullYear()} My Company Name
       </div>
     </div>
   );

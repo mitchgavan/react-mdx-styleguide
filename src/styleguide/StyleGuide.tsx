@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { MDXProvider } from '@mdx-js/react';
 import Layout from './Layout/Layout';
-import components from './components';
+import components from './config/components';
 import mdxComponents from './mdxComponents';
 import ThemePage from './theme.mdx';
 
