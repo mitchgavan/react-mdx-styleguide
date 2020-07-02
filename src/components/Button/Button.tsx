@@ -3,8 +3,14 @@ import { jsx } from '@emotion/core';
 
 interface ButtonProps {
   children: React.ReactNode;
+  /**
+   * The variant style
+   */
   variant?: 'secondary' | 'primary';
-  color?: 'blue' | 'green' | 'red' | 'gray';
+  /**
+   * The color of the button
+   */
+  color?: 'blue' | 'purple' | 'red';
 }
 
 const Button = ({
@@ -16,7 +22,8 @@ const Button = ({
   return (
     <button
       css={(theme) => ({
-        background: theme.colors.primary,
+        background:
+          variant === 'secondary' ? 'transparent' : theme.colors[color],
         appearance: 'none',
         display: 'inline-block',
         textAlign: 'center',
@@ -24,8 +31,10 @@ const Button = ({
         textDecoration: 'none',
         fontSize: 'inherit',
         padding: `${theme.space[2]} ${theme.space[3]}`,
-        color: 'white',
-        border: 0,
+        color:
+          variant === 'secondary' ? theme.colors[color] : theme.colors.white,
+        border: '2px solid',
+        borderColor: theme.colors[color],
         borderRadius: theme.radii.md,
         cursor: 'pointer',
       })}

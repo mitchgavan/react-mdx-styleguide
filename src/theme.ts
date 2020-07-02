@@ -1,3 +1,12 @@
+const colors = {
+  white: '#fff',
+  purple: '#8661c1',
+  blue: '#38b7ed',
+  red: '#c53030',
+  darkGrey: '#2e294e',
+  lightGrey: '#f6f6f6',
+};
+
 export const theme = {
   breakpoints: ['40em', '52em', '64em'],
   space: {
@@ -49,11 +58,12 @@ export const theme = {
     heading: 1.125,
   },
   colors: {
-    text: '#2e294e',
-    background: '#fff',
-    primary: '#8661c1',
-    secondary: '#38b7ed',
-    muted: '#f6f6f6',
+    ...colors,
+    text: colors.darkGrey,
+    background: colors.white,
+    primary: colors.purple,
+    secondary: colors.blue,
+    muted: colors.lightGrey,
   },
   radii: {
     none: '0',
