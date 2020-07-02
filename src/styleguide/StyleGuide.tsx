@@ -12,15 +12,17 @@ const StyleGuide = () => {
       <Layout>
         <MDXProvider components={mdxComponents}>
           <Switch>
-            {components.map((component) => (
-              <Route
-                key={component.name}
-                path={`/styleguide/components/${component.name.toLowerCase()}`}
-                component={
-                  require(`../components/${component.path}.mdx`).default
-                }
-              />
-            ))}
+            {components
+              .filter((component) => !component.hidden)
+              .map((component) => (
+                <Route
+                  key={component.name}
+                  path={`/styleguide/components/${component.name.toLowerCase()}`}
+                  component={
+                    require(`../components/${component.path}.mdx`).default
+                  }
+                />
+              ))}
             <Route path="/" component={ThemePage} />
           </Switch>
         </MDXProvider>

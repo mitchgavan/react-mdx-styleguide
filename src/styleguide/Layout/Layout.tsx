@@ -75,21 +75,23 @@ const Layout: React.FC = ({ children }) => {
           >
             Components
           </div>
-          {components.map(({ name }) => (
-            <Link
-              key={name}
-              to={`/styleguide/components/${name.toLowerCase()}`}
-              css={(theme) => ({
-                display: 'block',
-                marginBottom: theme.space[2],
-                color: 'inherit',
-                textDecoration: 'none',
-                ':hover': { color: theme.colors.primary },
-              })}
-            >
-              {name}
-            </Link>
-          ))}
+          {components
+            .filter((component) => !component.hidden)
+            .map(({ name }) => (
+              <Link
+                key={name}
+                to={`/styleguide/components/${name.toLowerCase()}`}
+                css={(theme) => ({
+                  display: 'block',
+                  marginBottom: theme.space[2],
+                  color: 'inherit',
+                  textDecoration: 'none',
+                  ':hover': { color: theme.colors.primary },
+                })}
+              >
+                {name}
+              </Link>
+            ))}
         </div>
       </div>
       <div

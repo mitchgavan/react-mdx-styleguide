@@ -4,7 +4,17 @@
 
 const components = [
   { name: 'Button', path: 'Button/Button' },
-  { name: 'Text', path: 'Text/Text' },
+  { name: 'Dropdown', path: 'Dropdown/Dropdown' },
+  {
+    name: 'DropdownButton',
+    path: 'Dropdown/DropdownButton/DropdownButton',
+    hidden: true,
+  },
+  {
+    name: 'DropdownContent',
+    path: 'Dropdown/DropdownContent/DropdownContent',
+    hidden: true,
+  },
 ];
 
 export default components;

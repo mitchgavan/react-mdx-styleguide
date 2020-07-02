@@ -1,0 +1,41 @@
+# Dropdown
+
+Below is an example of JSX embedded in Markdown. <br /> **Try and change the background
+color!**
+
+```jsx live=true
+<div style={{ padding: '20px', backgroundColor: 'lightgrey' }}>
+  <Dropdown>
+    <DropdownButton>Toggle</DropdownButton>
+    <DropdownContent>A barebones dropdown</DropdownContent>
+  </Dropdown>
+</div>
+```
+
+```jsx live=true
+<div style={{ padding: '20px', backgroundColor: 'lightgrey' }}>
+  <Dropdown
+    onOpen={() => console.log('Opened!')}
+    onClose={() => console.log('Closed!')}
+  >
+    {({ isOpen }) => (
+      <div>
+        <DropdownButton>{isOpen ? 'Close' : 'Open'}</DropdownButton>
+        <DropdownContent>A barebones dropdown</DropdownContent>
+      </div>
+    )}
+  </Dropdown>
+</div>
+```
+
+### Props
+
+<Props name="Dropdown" />
+
+### DropdownButton Props
+
+<Props name="DropdownButton" />
+
+### DropdownContent Props
+
+<Props name="DropdownContent" />
