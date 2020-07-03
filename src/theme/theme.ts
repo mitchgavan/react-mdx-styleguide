@@ -1,11 +1,4 @@
-const colors = {
-  white: '#fff',
-  purple: '#8661c1',
-  blue: '#38b7ed',
-  red: '#c53030',
-  darkGrey: '#2e294e',
-  lightGrey: '#f6f6f6',
-};
+import colors from './colors';
 
 export const theme = {
   breakpoints: ['40em', '52em', '64em'],
@@ -59,11 +52,11 @@ export const theme = {
   },
   colors: {
     ...colors,
-    text: colors.darkGrey,
+    text: colors.gray[800],
     background: colors.white,
-    primary: colors.purple,
-    secondary: colors.blue,
-    muted: colors.lightGrey,
+    primary: colors.purple[500],
+    secondary: colors.blue[500],
+    muted: colors.gray[50],
   },
   radii: {
     none: '0',

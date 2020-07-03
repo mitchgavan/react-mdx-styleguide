@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
 import { Link } from 'react-router-dom';
-import { Theme } from '../../theme';
+import { Theme } from '../../theme/theme';
 import components from '../config/components';
 
 const Layout: React.FC = ({ children }) => {
@@ -40,7 +40,7 @@ const Layout: React.FC = ({ children }) => {
             padding: theme.space[4],
           })}
         >
-          <div css={{ maxWidth: 800, margin: '0 auto' }}>{children}</div>
+          <div css={{ maxWidth: 800, margin: `0 auto 50px` }}>{children}</div>
         </div>
         <div
           css={(theme: Theme) => ({

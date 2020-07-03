@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
 import { Link } from 'react-router-dom';
-import { Theme } from '../../theme';
+import { Theme } from '../../theme/theme';
 
 const Home = () => {
   return (
