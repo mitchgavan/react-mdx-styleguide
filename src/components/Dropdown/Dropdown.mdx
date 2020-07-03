@@ -1,19 +1,22 @@
 # Dropdown
 
-Below is an example of JSX embedded in Markdown. <br /> **Try and change the background
-color!**
+A barebones dropdown component.
 
 ```jsx live=true
-<div style={{ padding: '20px', backgroundColor: 'lightgrey' }}>
+<div style={{ padding: '20px', backgroundColor: '#eee' }}>
   <Dropdown>
     <DropdownButton>Toggle</DropdownButton>
-    <DropdownContent>A barebones dropdown</DropdownContent>
+    <DropdownContent>Your content here</DropdownContent>
   </Dropdown>
 </div>
 ```
 
+### Access state
+
+Via render props
+
 ```jsx live=true
-<div style={{ padding: '20px', backgroundColor: 'lightgrey' }}>
+<div style={{ padding: '20px', backgroundColor: '#eee' }}>
   <Dropdown
     onOpen={() => console.log('Opened!')}
     onClose={() => console.log('Closed!')}
@@ -21,21 +24,32 @@ color!**
     {({ isOpen }) => (
       <div>
         <DropdownButton>{isOpen ? 'Close' : 'Open'}</DropdownButton>
-        <DropdownContent>A barebones dropdown</DropdownContent>
+        <DropdownContent>
+          <div
+            style={{
+              padding: '20px',
+              backgroundColor: 'white',
+              marginTop: '10px',
+              borderRadius: '3px',
+            }}
+          >
+            Your content here
+          </div>
+        </DropdownContent>
       </div>
     )}
   </Dropdown>
 </div>
 ```
 
-### Props
+## Props
 
 <Props name="Dropdown" />
 
-### DropdownButton Props
+## DropdownButton Props
 
 <Props name="DropdownButton" />
 
-### DropdownContent Props
+## DropdownContent Props
 
 <Props name="DropdownContent" />

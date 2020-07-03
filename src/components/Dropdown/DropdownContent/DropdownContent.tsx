@@ -13,7 +13,7 @@ const DropdownContent = ({ children }: DropdownContentProps) => {
     return null;
   }
 
-  return <div css={{ padding: 20 }}>{children}</div>;
+  return <div>{children}</div>;
 };
 
 export default DropdownContent;
