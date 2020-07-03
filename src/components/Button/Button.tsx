@@ -10,7 +10,7 @@ interface ButtonProps {
   /**
    * The color of the button
    */
-  color?: 'blue' | 'purple' | 'red';
+  color?: 'blue' | 'purple' | 'red' | 'yellow' | 'green';
 }
 
 const Button = ({
