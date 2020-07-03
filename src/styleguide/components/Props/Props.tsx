@@ -1,5 +1,5 @@
 import React from 'react';
-// import { Table, td, th } from '../mdxComponents';
+import Table, { TD, TH } from '../Table/Table';
 import components from '../../config/components';
 
 interface Props {
@@ -35,28 +35,28 @@ const Props: React.FC<Props> = ({ name }) => {
   }
 
   return (
-    <table>
+    <Table>
       <thead>
         <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Default</th>
-          <th>Description</th>
+          <TH>Name</TH>
+          <TH>Type</TH>
+          <TH>Default</TH>
+          <TH>Description</TH>
         </tr>
       </thead>
       <tbody>
         {Object.keys(props).map((key) => {
           return (
             <tr key={key}>
-              <td>{key}</td>
-              <td>{formatType(props[key].tsType)}</td>
-              <td>{formatDefaultValue(props[key])}</td>
-              <td>{props[key].description}</td>
+              <TD>{key}</TD>
+              <TD>{formatType(props[key].tsType)}</TD>
+              <TD>{formatDefaultValue(props[key])}</TD>
+              <TD>{props[key].description}</TD>
             </tr>
           );
         })}
       </tbody>
-    </table>
+    </Table>
   );
 };
 
