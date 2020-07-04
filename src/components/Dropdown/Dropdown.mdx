@@ -1,0 +1,55 @@
+# Dropdown
+
+A barebones dropdown component.
+
+```jsx live=true
+<div style={{ padding: '20px', backgroundColor: '#eee' }}>
+  <Dropdown>
+    <DropdownButton>Toggle</DropdownButton>
+    <DropdownContent>Your content here</DropdownContent>
+  </Dropdown>
+</div>
+```
+
+### Access state
+
+Via render props
+
+```jsx live=true
+<div style={{ padding: '20px', backgroundColor: '#eee' }}>
+  <Dropdown
+    onOpen={() => console.log('Opened!')}
+    onClose={() => console.log('Closed!')}
+  >
+    {({ isOpen }) => (
+      <div>
+        <DropdownButton>{isOpen ? 'Close' : 'Open'}</DropdownButton>
+        <DropdownContent>
+          <div
+            style={{
+              padding: '20px',
+              backgroundColor: 'white',
+              marginTop: '10px',
+              borderRadius: '3px',
+            }}
+          >
+            Your content here
+          </div>
+        </DropdownContent>
+      </div>
+    )}
+  </Dropdown>
+</div>
+```
+
+## Props
+
+<Props name="Dropdown" />
+
+## DropdownButton Props
+
+<Props name="DropdownButton" />
+
+## DropdownContent Props
+
+<Props name="DropdownContent" />

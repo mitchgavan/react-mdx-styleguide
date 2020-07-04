@@ -4,7 +4,7 @@ import { ErrorBoundary } from 'react-error-boundary';
 import { ThemeProvider } from 'emotion-theming';
 import { Global, css } from '@emotion/core';
 import emotionNormalize from 'emotion-normalize';
-import theme from './theme';
+import theme from './theme/theme';
 
 const Home = lazy(() => import('./views/Home/Home'));
 const StyleGuide = lazy(() => import('./styleguide/StyleGuide'));

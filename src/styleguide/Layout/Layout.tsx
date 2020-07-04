@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
 import { Link } from 'react-router-dom';
-import { Theme } from '../../theme';
+import { Theme } from '../../theme/theme';
 import components from '../config/components';
 
 const Layout: React.FC = ({ children }) => {
@@ -40,7 +40,7 @@ const Layout: React.FC = ({ children }) => {
             padding: theme.space[4],
           })}
         >
-          <div css={{ maxWidth: 800, margin: '0 auto' }}>{children}</div>
+          <div css={{ maxWidth: 800, margin: `0 auto 50px` }}>{children}</div>
         </div>
         <div
           css={(theme: Theme) => ({
@@ -75,21 +75,23 @@ const Layout: React.FC = ({ children }) => {
           >
             Components
           </div>
-          {components.map(({ name }) => (
-            <Link
-              key={name}
-              to={`/styleguide/components/${name.toLowerCase()}`}
-              css={(theme) => ({
-                display: 'block',
-                marginBottom: theme.space[2],
-                color: 'inherit',
-                textDecoration: 'none',
-                ':hover': { color: theme.colors.primary },
-              })}
-            >
-              {name}
-            </Link>
-          ))}
+          {components
+            .filter((component) => !component.hidden)
+            .map(({ name }) => (
+              <Link
+                key={name}
+                to={`/styleguide/components/${name.toLowerCase()}`}
+                css={(theme) => ({
+                  display: 'block',
+                  marginBottom: theme.space[2],
+                  color: 'inherit',
+                  textDecoration: 'none',
+                  ':hover': { color: theme.colors.primary },
+                })}
+              >
+                {name}
+              </Link>
+            ))}
         </div>
       </div>
       <div

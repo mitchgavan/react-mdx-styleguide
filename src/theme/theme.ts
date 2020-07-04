@@ -1,3 +1,5 @@
+import colors from './colors';
+
 export const theme = {
   breakpoints: ['40em', '52em', '64em'],
   space: {
@@ -49,11 +51,12 @@ export const theme = {
     heading: 1.125,
   },
   colors: {
-    text: '#2e294e',
-    background: '#fff',
-    primary: '#8661c1',
-    secondary: '#38b7ed',
-    muted: '#f6f6f6',
+    ...colors,
+    text: colors.gray[800],
+    background: colors.white,
+    primary: colors.purple[500],
+    secondary: colors.blue[500],
+    muted: colors.gray[50],
   },
   radii: {
     none: '0',
