@@ -1,30 +1,12 @@
 import React from 'react';
-import Highlight, {
-  defaultProps,
-  Language,
-  PrismTheme,
-} from 'prism-react-renderer';
+import Highlight, { defaultProps } from 'prism-react-renderer';
 import prismTheme from 'prism-react-renderer/themes/nightOwl';
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
 import { mdx } from '@mdx-js/react';
 
-interface CodeBlockProps {
-  children: React.ReactNode;
-  className?: string;
-  live?: string;
-  render?: string;
-  scope?: {};
-}
-
-const CodeBlock: React.FC<CodeBlockProps> = ({
-  children,
-  className,
-  live,
-  render,
-  scope,
-}) => {
+const CodeBlock = ({ children, className, live, render, scope }) => {
   const language = className.replace(/language-/, '');
-  const theme = prismTheme as PrismTheme;
+  const theme = prismTheme;
   const liveProviderScope = { mdx, ...scope };
 
   if (live) {
@@ -63,7 +45,7 @@ const CodeBlock: React.FC<CodeBlockProps> = ({
     <Highlight
       {...defaultProps}
       code={children.toString()}
-      language={language as Language}
+      language={language}
       theme={theme}
     >
       {({

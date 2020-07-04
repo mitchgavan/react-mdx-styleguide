@@ -3,14 +3,13 @@
     "outDir": "./dist/",
     "sourceMap": true,
     // "noImplicitAny": true,
-    "module": "commonjs",
-    "resolveJsonModule": true,
+    "module": "esnext",
     "target": "es5",
     "jsx": "react",
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "allowJs": true,
     "skipLibCheck": true,
-    "types": ["@emotion/core"]
+    "types": ["@emotion/core", "node"]
   }
 }
