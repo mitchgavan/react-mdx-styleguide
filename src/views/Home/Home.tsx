@@ -13,14 +13,21 @@ const Home = () => {
         margin: '0 auto',
       })}
     >
-      <h1>My Home Page!</h1>
+      <h1>React MDX Styleguide Demo</h1>
       <p>
-        This is a sample app that includes a couple of components that will be
-        included in the accompanying style guide.
+        This is a sample app that includes a couple of components. These
+        components are included in the accompanying style guide.
+      </p>
+      <p>
+        It demonstrates how to add a style guide to a React codebase utilizing
+        your existing tooling.
       </p>
       <Link
         to="/styleguide"
-        css={(theme: Theme) => ({ color: theme.colors.primary })}
+        css={(theme: Theme) => ({
+          color: theme.colors.primary,
+          fontSize: theme.fontSizes.lg,
+        })}
       >
         View Style Guide
       </Link>
