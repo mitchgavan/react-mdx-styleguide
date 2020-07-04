@@ -1,6 +1,6 @@
 import React from 'react';
-import CodeBlock from './components/CodeBlock/CodeBlock';
 import components from './config/components';
+import CodeBlock from './components/CodeBlock/CodeBlock';
 import Props from './components/Props/Props';
 
 const styleGuideComponents = {};

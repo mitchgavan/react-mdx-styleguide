@@ -55,7 +55,7 @@ const Layout: React.FC = ({ children }) => {
         >
           <Link
             key={name}
-            to={`/styleguide/theme`}
+            to={`/styleguide/introduction`}
             css={(theme: Theme) => ({
               display: 'block',
               marginBottom: theme.space[4],
@@ -64,13 +64,13 @@ const Layout: React.FC = ({ children }) => {
               ':hover': { color: theme.colors.primary },
             })}
           >
-            Theme
+            Introduction
           </Link>
           <div
             css={(theme: Theme) => ({
-              textTransform: 'uppercase',
               fontWeight: 'bold',
               marginBottom: theme.space[2],
+              color: theme.colors.gray[500],
             })}
           >
             Components
