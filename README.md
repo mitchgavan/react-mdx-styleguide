@@ -1,6 +1,6 @@
 # React MDX Style Guide
 
-An custom style guide/design system/component library. That can be completely customised for your React application. It includes the features you've come to expect with a modern style guide, including;
+A custom style guide/design system/component library. It can be completely customised for your React application. It includes the features you've come to expect with a modern style guide, including;
 
 - Component pages that are live editable.
 - Custom syntax highlighting.
